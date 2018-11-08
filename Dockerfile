@@ -3,5 +3,6 @@ WORKDIR app/
 COPY COPY package*.json ./
 RUN npm install
 COPY . .
-CMD [ "npm", "build:dev" ]
+CMD [ "npm", "run", "build:dev" ]
 EXPOSE 9000
+
