@@ -4,9 +4,9 @@ import Home from '../pages/containers/home.js';
 import data from '../api.json';
 //import Playlist from './src/playlist/components/playlist.js';
 //import data from './src/api.json';
-const app = document.getElementById('app')
+const homeContainer = document.getElementById('home-container')
 // import ReactDom from 'react-dom';
 //ReactDom.render(que voy a rendrizar, donde lo hare);
 //render(<Media /> ,app);
 //propiedades dinamicas
-render(<Home data={data} /> ,app);
+render(<Home data={data} /> ,homeContainer);
