@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import  './video.css'
+
 class Video extends Component {
 	togglePlay(){
 		if (this.props.pause){
@@ -20,6 +21,8 @@ class Video extends Component {
 		const {
 			handlerLoadedMetadata,
 			handleTimeUpdate,
+			handleSeeking,
+			handleSeeked,		
 		} = this.props;
 		return (
 		  <div className='Video'>		
@@ -29,6 +32,8 @@ class Video extends Component {
           	  ref={this.setRef}
           	  onLoadedMetadata={handlerLoadedMetadata}
           	  onTimeUpdate={handleTimeUpdate}
+          	  onSeeking={handleSeeking}
+          	  onSeeked={handleSeeked}
             />
           </div>
 		)
