@@ -16,42 +16,52 @@ class VideoPlayer extends Component {
     currentTime: 0,
     loading: false,
   }
+
   togglePlay = (event) => {
     this.setState({
       pause: !this.state.pause,
     })
   }
+
   componentDidMount(){
     this.setState({
       pause: (!this.props.autoplay)
     })
   }
+
   handlerLoadedMetadata = event => {
     this.video = event.target;
     this.setState({
-      duration: formattedTime(this.video.duration)
+      //duration: formattedTime(this.video.duration)
+      duration: this.video.duration
     });
   }
+
   handleTimeUpdate = event => {
     //console.log(this.video.currentTime)
     this.setState({
-      currentTime: formattedTime(this.video.currentTime)
+      //currentTime: formattedTime(this.video.currentTime)
+      currentTime: this.video.currentTime
     });
   }  
+
   handleProgressChange = event => {
     //event.target.value
     this.video.currentTime = event.target.value
   }
+
   handleSeeking = event => {
     this.setState({
       loading: true
     });
   }
+
   handleSeeked = event => {
     this.setState({
       loading: false
     });
   }
+
   render() {
     return (
       <VideoPlayerLayout>

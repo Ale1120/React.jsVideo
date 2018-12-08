@@ -17,6 +17,7 @@ class Video extends Component {
 	setRef = element => {
 		this.video = element;
 	}
+	
 	render() {
 		const {
 			handlerLoadedMetadata,
