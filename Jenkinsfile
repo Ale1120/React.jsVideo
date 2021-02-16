@@ -15,6 +15,7 @@ pipeline {
     }
     stage('Run tests') {
       steps {
+        sh "docker rm web"
         sh "docker run  -d --name web -p 3000:3000 ${dockerImage.id} "
       }
     }
