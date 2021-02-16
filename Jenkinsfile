@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    ARTIFACT_ID = "elbuo8/webapp:${env.BUILD_NUMBER}"
+    ARTIFACT_ID = "react:${env.BUILD_NUMBER}"
   }
 
   stages {
@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Run tests') {
       steps {
-        sh "docker run  -d -p 3000:3000 ${dockerImage.id} "
+        sh "docker run  -d --name web -p 3000:3000 ${dockerImage.id} "
       }
     }
     stage('Publish') {
